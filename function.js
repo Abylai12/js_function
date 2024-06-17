@@ -36,19 +36,113 @@
 // maxNumber(a, b);
 
 // BODLOGO 2 FUNCTION
-let arr = [1, 34, 35, 1];
-function findNumber(arr) {
-  let c = Number(prompt("too oruul:  "));
-  let numFind = 0;
+// let arr = [1, 34, 35, 2];
+// function findNumber(arr) {
+//   let c = Number(prompt("too oruul:  "));
+//   let numFind = 0;
+//   let num = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (c === arr[i]) {
-      c = arr[i];
-    } else {
-      numFind = "-1";
+//   for (let i = 0; i < arr.length; i++) {
+//     if (c === arr[i]) {
+//       num = arr[i];
+//     }
+//   }
+//   if (num === 0) {
+//     numFind = "-1";
+//   } else {
+//     numFind = num;
+//   }
+//   console.log(numFind);
+//   return numFind;
+// }
+// findNumber(arr);
+// bodlogo 3 garaas avsan ugiin useg baigaa esehiig shalgah
+
+// function findWord() {
+//   let arr = prompt("ug oruulna uu?:  ");
+//   let c = prompt("haih usegee oruulna uu?:  ");
+//   let numFind = 0;
+//   let num = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (c === arr[i]) {
+//       num = arr[i];
+//     }
+//   }
+//   if (num === 0) {
+//     numFind = "-1";
+//   } else {
+//     numFind = num;
+//   }
+//   console.log(numFind);
+//   return numFind;
+// }
+// findWord();
+// Bodlogo 4 ugudsun array dundajii ol
+
+// let arr = [1, 34, 35, 2];
+// function findNumber(arr) {
+//   let numFind = 0;
+//   let num = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     numFind += arr[i];
+//     num = arr.length;
+//   }
+//   let avg = numFind / num;
+//   console.log(avg);
+//   return avg;
+// }
+// findNumber(arr);
+
+// Bodlogo 5 ugudsun array niilveriig ol
+// let arr = [1, 34, 35, 2];
+// function findNumber(arr) {
+//   let numFind = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     numFind += arr[i];
+//   }
+//   console.log(numFind);
+//   return numFind;
+// }
+// findNumber(arr);
+
+//  bodlogo 6 Ugugdsun too anhnii too esehiig ol
+// function anhniiToo() {
+//   let a = Number(prompt("too oruulna uu:  "));
+//   if (a > 1) {
+//     let num = 0;
+//     for (let i = 2; i <= a; i++) {
+//       if (a % i == 0) {
+//         num++;
+//       }
+//     }
+//     if (num == 1) {
+//       console.log("mun");
+//     } else {
+//       console.log("bish");
+//     }
+//   } else {
+//     console.log("anhnii too bish");
+//   }
+// }
+// anhniiToo();
+
+// bodlogo 7 palidrooe too esehiig shalgah
+
+//bodlogo loop 11
+function palidrome() {
+  let n = Number(prompt("too oruulna uu"));
+  let sum = 0;
+  let num = 0;
+  while (n > 0) {
+    let negj = n % 10;
+    n = (n - negj) / 10;
+    while (negj > 0) {
+      num = num * 10 + negj;
+      negj = negj * 0;
     }
   }
-  return c, numFind;
+  console.log(num);
+  console.log(n);
 }
-
-findNumber(arr);
+palidrome();
