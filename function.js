@@ -167,57 +167,57 @@
 // palidrome();
 // bodlogo 9
 
-let students = [
-  {
-    name: "Сэд-Эрдэнэ",
+// let students = [
+//   {
+//     name: "Сэд-Эрдэнэ",
 
-    age: 19,
+//     age: 19,
 
-    gender: "male",
+//     gender: "male",
 
-    points: 70,
-  },
+//     points: 70,
+//   },
 
-  {
-    name: "Индра",
+//   {
+//     name: "Индра",
 
-    age: 19,
+//     age: 19,
 
-    gender: "female",
+//     gender: "female",
 
-    points: 50,
-  },
+//     points: 50,
+//   },
 
-  {
-    name: "Хатнаа ",
+//   {
+//     name: "Хатнаа ",
 
-    age: 21,
+//     age: 21,
 
-    gender: "male",
+//     gender: "male",
 
-    points: 99,
-  },
+//     points: 99,
+//   },
 
-  {
-    name: "Тэмүүлэн",
+//   {
+//     name: "Тэмүүлэн",
 
-    age: 23,
+//     age: 23,
 
-    gender: "male",
+//     gender: "male",
 
-    points: 55,
-  },
+//     points: 55,
+//   },
 
-  {
-    name: "Намуун",
+//   {
+//     name: "Намуун",
 
-    age: 23,
+//     age: 23,
 
-    gender: "female",
+//     gender: "female",
 
-    points: 85,
-  },
-];
+//     points: 85,
+//   },
+// ];
 //Эхний объектыг хэвлэж гаргах
 // console.log(students[0]);
 // Ангид хэдэн эрэгтэй , эмэгтэй сурагч байгааг олох object буцаадаг функц бичих
@@ -276,16 +276,60 @@ let students = [
 
 // 60-аас дээш оноо авсан cурагчдийг тоол
 
-function gender(students) {
+// function gender(students) {
+//   let sum = 0;
+
+//   for (let i = 0; i < students.length; i++) {
+//     if (students[i].points > 60) {
+//       sum++;
+//     }
+//   }
+
+//   return sum;
+// }
+// let c = gender(students);
+// console.log(c);
+
+// Extra assignment
+// bodlogo 1
+// Ugugdsun array iin hamgiin tom, hamgiin bagiin olj, dundajiin olj, min, max, avg gsn 3 utag butsaadag function bichih
+let arr = [1, 2, 3, 4, 5];
+function arrOperator(array) {
+  let a = 0;
   let sum = 0;
-
-  for (let i = 0; i < students.length; i++) {
-    if (students[i].points > 60) {
-      sum++;
-    }
+  // let avg = 0;
+  let max = Math.max(...array);
+  let min = Math.min(...array);
+  for (let i = 0; i < array.length; i++) {
+    a = array.length;
+    sum += array[i];
   }
-
-  return sum;
+  let avg = sum / a;
+  return { min: min, max: max, avg: avg };
 }
-let c = gender(students);
+let c = arrOperator(arr);
 console.log(c);
+
+// bodlogo 2
+//Ugugdsun zahialguudiin niit borluulaltiin dun oldog function bichih.
+
+const orders = [
+  {
+    orderId: 1,
+    items: [
+      { itemName: "Apple", price: 1 },
+      { itemName: "Banana", price: 2 },
+    ],
+  },
+  {
+    orderId: 2,
+    items: [
+      { itemName: "Orange", price: 1.5 },
+      { itemName: "Grapes", price: 3 },
+    ],
+  },
+];
+function orderedItems(order){
+
+  for 
+}
