@@ -129,20 +129,163 @@
 
 // bodlogo 7 palidrooe too esehiig shalgah
 
-//bodlogo loop 11
-function palidrome() {
-  let n = Number(prompt("too oruulna uu"));
+// function palidrome() {
+//   let n = Number(prompt("too oruulna uu"));
+//   let sum = 0;
+//   let num = 0;
+//   let huulvar = n;
+//   while (n > 0) {
+//     let negj = n % 10;
+//     n = (n - negj) / 10;
+//     while (negj > 0) {
+//       num = num * 10 + negj;
+//       negj = negj * 0;
+//     }
+//   }
+//   if (huulvar === num) {
+//     sum = "true";
+//   } else {
+//     sum = "false";
+//   }
+
+//   console.log(sum);
+//   return sum;
+// }
+// palidrome();
+
+// bodlogo 8 ugugdsun string urvuulna gargah
+// function palidrome() {
+//   let num = "";
+
+//   let n = prompt("ug oruulna uu");
+//   for (let i = n.length - 1; i >= 0; i--) {
+//     num += n[i];
+//   }
+//   console.log(num);
+//   return num;
+// }
+// palidrome();
+// bodlogo 9
+
+let students = [
+  {
+    name: "Сэд-Эрдэнэ",
+
+    age: 19,
+
+    gender: "male",
+
+    points: 70,
+  },
+
+  {
+    name: "Индра",
+
+    age: 19,
+
+    gender: "female",
+
+    points: 50,
+  },
+
+  {
+    name: "Хатнаа ",
+
+    age: 21,
+
+    gender: "male",
+
+    points: 99,
+  },
+
+  {
+    name: "Тэмүүлэн",
+
+    age: 23,
+
+    gender: "male",
+
+    points: 55,
+  },
+
+  {
+    name: "Намуун",
+
+    age: 23,
+
+    gender: "female",
+
+    points: 85,
+  },
+];
+//Эхний объектыг хэвлэж гаргах
+// console.log(students[0]);
+// Ангид хэдэн эрэгтэй , эмэгтэй сурагч байгааг олох object буцаадаг функц бичих
+// function gender(students) {
+//   let word = "male";
+//   let num = 0;
+//   let sum = 0;
+
+//   for (let i = 0; i < students.length; i++) {
+//     if (word === students[i].gender) {
+//       num++;
+//       sum = students.length;
+//     }
+//   }
+//   let emegtei = sum - num;
+//   return { male: num, female: emegtei };
+// }
+// let c = gender(students);
+// console.log(c);
+
+// Сурагчдын насны дунджийг олох функц бичих
+
+// function gender(students) {
+//   let word = 0;
+//   // let num = 0;
+//   let sum = 0;
+
+//   for (let i = 0; i < students.length; i++) {
+//     word += students[i].age;
+//     sum = students.length;
+//   }
+
+//   let age = word / sum;
+//   return age;
+// }
+// let c = gender(students);
+// console.log(c);
+
+// Нас нь 21-ээс дээш буюу тэнцүү сурагчдыг ол
+
+// function gender(students) {
+//   let word = 0;
+//   // let num = 0;
+//   let sum = " ";
+
+//   for (let i = 0; i < students.length; i++) {
+//     if (students[i].age >= 21) {
+//       sum += " " + students[i].name;
+//     }
+//   }
+
+//   return sum;
+// }
+// let c = gender(students);
+// console.log(c);
+
+// 60-аас дээш оноо авсан cурагчдийг тоол
+
+function gender(students) {
   let sum = 0;
-  let num = 0;
-  while (n > 0) {
-    let negj = n % 10;
-    n = (n - negj) / 10;
-    while (negj > 0) {
-      num = num * 10 + negj;
-      negj = negj * 0;
+
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].points > 60) {
+      sum++;
     }
   }
-  console.log(num);
-  console.log(n);
+
+  return sum;
 }
-palidrome();
+let c = gender(students);
+console.log(c);
