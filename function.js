@@ -328,8 +328,88 @@ const orders = [
       { itemName: "Grapes", price: 3 },
     ],
   },
+  {
+    orderId: 3,
+    items: [
+      { itemName: "Orange", price: 1.5 },
+      { itemName: "Grapes", price: 3 },
+    ],
+  },
 ];
-function orderedItems(order){
+function orderedItems(order) {
+  let a = 0;
+  let b = 0;
 
-  for 
+  for (let i = 0; i < order.length; i++) {
+    a = order[i].items;
+    // console.log(a);
+    for (let j = 0; j < a.length; j++) {
+      b += order[i].items[j].price;
+      // console.log(b);
+    }
+    // a += order[0].items[i].price;
+    // b += order[1].items[i].price;
+  }
+  // console.log(a);
+  // console.log(b);
+
+  return b;
 }
+let result = orderedItems(orders);
+console.log(result);
+
+// bodlogo 3
+// Ugugdsun array iin anhnii utagtai bolon квадрат, куб iin oldog function bichih. jishee ni: input [1, 2, 3, 4, 5]
+let arrMath = [1, 2, 3, 4, 5];
+function arrSquare(andaa) {
+  let a = 0;
+  let orgn = 0;
+  let sqr = 0;
+  let cube = 0;
+  let b = [];
+
+  for (let j = 0; j < andaa.length; j++) {
+    // console.log("a", a);
+    orgn = andaa[j];
+    sqr = andaa[j] * andaa[j];
+    cube = andaa[j] * andaa[j] * andaa[j];
+    a = {
+      original: orgn,
+      pow: sqr,
+      cube: cube,
+    };
+    b.push(a);
+
+    // console.log(a);
+  }
+  return b;
+}
+let dun = arrSquare(arrMath);
+console.log(dun);
+
+// bodlogo 4
+// Ugugdsun company iin data aas hamgiin ih tsalintai ajiltang oldog function bichih.
+
+const company = {
+  name: "TechCorp",
+  address: "123 Silicon Valley",
+  employees: [
+    { name: "Alice", salary: 90000 },
+    { name: "Bob", salary: 120000 },
+    { name: "Charlie", salary: 110000 },
+  ],
+};
+function salaryMax(office) {
+  let ajilchid = office.employees;
+  let maxSalary = ajilchid[0].salary;
+  let maxSalaryName = "";
+  for (let i = 0; i < ajilchid.length; i++) {
+    if (ajilchid[i].salary > maxSalary) {
+      maxSalary = ajilchid[i].salary;
+      maxSalaryName = ajilchid[i].name;
+    }
+  }
+
+  console.log(maxSalaryName);
+}
+salaryMax(company);
