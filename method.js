@@ -46,20 +46,192 @@ console.log(randomArr);
 //Ugugdsun temdegt muriin buh usgiig tom useg bolgoh function bich. input: 'the quick brown fox' output: 'The Quick Brown Fox '
 
 function upperCase(sentence) {
-  let a = 0;
-  for (let i = 0; i < myGreeting.length; i++) {
-    let myGreeting = "the quick brown fox";
-    let capFirstLetter = myGreeting[i].toUpperCase();
+  let word = sentence.split(" ");
+  let newWord = "";
+  for (let i = 0; i < word.length; i++) {
+    let firstWord = word[i];
+    let firstLetter = firstWord[0].toUpperCase();
+    let restWord = firstWord.slice(1);
+    newWord += firstLetter + restWord + " ";
+  }
+  return newWord;
+}
 
-    console.log(capFirstLetter);
-    let restOfGreeting = myGreeting.slice(1);
+let hi = upperCase("the quick brown fox");
+console.log(hi);
+// bodlogo 5
+//Ugugdsun temdegt muriin array iig tus buriin temdegt muriig urvuugaar butsaah shine array butsaadag function bich. input: ['hello', 'world', 'javascript', 'array'] output: ['olleh', 'dlrow', 'tpircsavaj', 'yarra']
 
-    console.log(restOfGreeting);
-    //returns the string 'ello'
-    let newGreeting = capFirstLetter + restOfGreeting;
+// function reverseWord() {
+// let words = prompt("tongorgoh ugee oruulna uu?");
+//   let word = words.split(" ");
+//   let revArr = [];
+//   let revWord = "";
+//   for (let i = 0; i < word.length; i++) {
+//     let firstWord = word[i];
+//     revWord = firstWord.split("");
+//     let ug = revWord.reverse();
+//     let rev = ug.join(" ");
+//     revArr.push(rev);
 
-    console.log(newGreeting);
-    //Hello
+//   }
+//   return revArr;
+// }
+
+// let res = reverseWord();
+// console.log(res);
+
+// bodlogo 6
+//Ugugdsun text dotor tuhain oruulsan keyword(prompt ashiglah) ni bn uu gedgiin shalgah function bich. text = 'animal world' input: animal output: true, input: cat ouput: false
+
+// function searchWord(sentence) {
+//   let words = prompt("Haih ugee oruulna uu?");
+//   let word = sentence.split(" ");
+//   let urDun = word.includes(words);
+//   return urDun;
+// }
+// let hariu = searchWord("animal world");
+// console.log(hariu);
+
+// bodlogo 7
+const data = [
+  {
+    productName: "Bakery",
+    unitPrice: 5000,
+    amount: 100,
+    totalPrice: 500000,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "Chocolate",
+    unitPrice: 3000,
+    amount: 183,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "Ali Baba",
+    unitPrice: 1500,
+    amount: 180,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "talh atar",
+    unitPrice: 2500,
+    amount: 100,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "tsuu",
+    unitPrice: 4450,
+    amount: 180,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+  {
+    productName: "Tarag",
+    unitPrice: 5000,
+    amount: 100,
+    totalPrice: 500000,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "undug",
+    unitPrice: 1000,
+    amount: 500,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "Cheese",
+    unitPrice: 3000,
+    amount: 253,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "bohi",
+    unitPrice: 2000,
+    amount: 58,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "coca-cola",
+    unitPrice: 4500,
+    amount: 278,
+    totalPrice: 54.0,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+];
+//Дараах даалгаварыг хийж гүйцэтгэнэ үү.
+
+//1. Нийт борлуулалтын дүнг тооцоолох.
+function totalSell(sellData) {
+  let totalSell = 0;
+  for (let i = 0; i < sellData.length; i++) {
+    totalSell += sellData[i].unitPrice * sellData[i].amount;
+  }
+  return totalSell;
+}
+let resultSell = totalSell(data);
+console.log(resultSell);
+
+// 2. Нийт борлуулагдсан барааны тоог тооцоолох.
+
+function totalProductNumber(sellData) {
+  let totalProduct = 0;
+  for (let i = 0; i < sellData.length; i++) {
+    totalProduct += sellData[i].amount;
+  }
+  return totalProduct;
+}
+let resultProduct = totalProductNumber(data);
+console.log(resultProduct);
+
+// 3. Хамгийн их зарагдсан 5 барааны жагсаалт /боруулалтын үнийн дүнгээр/ харуулах.
+
+function mostSellProduct(sellData) {
+  let mostSell = 0;
+  let mostFive = [];
+
+  for (let i = 0; i < sellData.length; i++) {
+    mostSell = sellData[i].amount;
+    console.log(mostSell);
+    mostFive.push(mostSell);
+  }
+
+  mostFive.sort(function (a, b) {
+    return b - a;
+  });
+
+  let five = mostFive.slice(0, 5);
+  console.log(five);
+  // return mostSell;
+  for (let i = 0; i < five.length; i++) {
+    let a = sellData[i].amount.includes(five[0]);
+    console.log(a);
   }
 }
-upperCase();
+let resultMost = mostSellProduct(data);
+// console.log(resultMost);
