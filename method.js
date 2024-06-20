@@ -211,27 +211,43 @@ console.log(resultProduct);
 
 // 3. Хамгийн их зарагдсан 5 барааны жагсаалт /боруулалтын үнийн дүнгээр/ харуулах.
 
+// function mostSellProduct(sellData) {
+//   let productData = sellData.sort(function (a, b) {
+//     return b.amount - a.amount;
+//   });
+//   const mostFive = productData.slice(0, 5);
+//   const productNames = [];
+//   for (let i = 0; i < mostFive.length; i++) {
+//     const nameAmount = mostFive[i];
+//     const productInfo = {
+//       productName: nameAmount.productName,
+//       amount: nameAmount.amount,
+//     };
+//     // Push the new object to the productsInfo array
+//     productNames.push(productInfo);
+//   }
+//   return { productNames };
+// }
+// let resultMost = mostSellProduct(data);
+// console.log(resultMost);
+
+//4. Хамгийн бага зарагдсан 5 барааны жагсаалт /боруулалтын тоо хэмжээгэр/ харуулах.
 function mostSellProduct(sellData) {
-  let mostSell = 0;
-  let mostFive = [];
-
-  for (let i = 0; i < sellData.length; i++) {
-    mostSell = sellData[i].amount;
-    console.log(mostSell);
-    mostFive.push(mostSell);
-  }
-
-  mostFive.sort(function (a, b) {
-    return b - a;
+  let productData = sellData.sort(function (a, b) {
+    return a.amount - b.amount;
   });
-
-  let five = mostFive.slice(0, 5);
-  console.log(five);
-  // return mostSell;
-  for (let i = 0; i < five.length; i++) {
-    let a = sellData[i].amount.includes(five[0]);
-    console.log(a);
+  const mostFive = productData.slice(0, 5);
+  const productNames = [];
+  for (let i = 0; i < mostFive.length; i++) {
+    const nameAmount = mostFive[i];
+    const productInfo = {
+      productName: nameAmount.productName,
+      amount: nameAmount.amount,
+    };
+    // Push the new object to the productsInfo array
+    productNames.push(productInfo);
   }
+  return { productNames };
 }
 let resultMost = mostSellProduct(data);
-// console.log(resultMost);
+console.log(resultMost);
