@@ -192,7 +192,7 @@ function totalSell(sellData) {
   for (let i = 0; i < sellData.length; i++) {
     totalSell += sellData[i].unitPrice * sellData[i].amount;
   }
-  return totalSell;
+  return { "borluulaltiin dun": totalSell };
 }
 let resultSell = totalSell(data);
 console.log(resultSell);
@@ -204,7 +204,7 @@ function totalProductNumber(sellData) {
   for (let i = 0; i < sellData.length; i++) {
     totalProduct += sellData[i].amount;
   }
-  return totalProduct;
+  return { "niit borluulagdsan baraa": totalProduct };
 }
 let resultProduct = totalProductNumber(data);
 console.log(resultProduct);
@@ -251,3 +251,32 @@ function mostSellProduct(sellData) {
 }
 let resultMost = mostSellProduct(data);
 console.log(resultMost);
+
+// time convert
+const convertTime12to24 = (time12h) => {
+  // const [time] = time12h.split(" ");
+  // console.log(typeof time);
+  // console.log(modifier);
+  let [hours, minutes, second] = time12h.split(":");
+  let orgSec = second[0] + second[1];
+  let muj = second.includes("PM");
+  let orgHour = Number(hours[0] + hours[1]);
+  if (hours == 12 && muj === false) {
+    hours = "00";
+    return `${hours}:${minutes}:${orgSec}`;
+  }
+  if (muj === true && hours != 12) {
+    orgHour += 12;
+
+    return `${orgHour}:${minutes}:${orgSec}`;
+  }
+  if (muj == true && 12 == hours) {
+    return `${hours}:${minutes}:${orgSec}`;
+  }
+  if (muj == false) {
+    return `${hours}:${minutes}:${orgSec}`;
+  }
+};
+
+let hugatsaa = convertTime12to24("06:45:54AM");
+console.log(hugatsaa);
